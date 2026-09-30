@@ -226,6 +226,19 @@
             bindings = <&kp LS(Z) &kp LS(A) &kp LS(Q) &kp EXCL &kp NUMBER_2 &kp W &kp S &kp X>;
             label = "PW";
         };
+
+        Miracast: Miracast {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LEFT_GUI &kp K>,
+                <&macro_wait_time 2>,
+                <&kp TAB>,
+                <&macro_wait_time 1>,
+                <&kp ENTER>;
+
+            label = "MIRACAST";
+        };
     };
 
     keymap {
@@ -287,7 +300,7 @@
 
         layer_3 {
             bindings = <
-&bt BT_PRV  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_PRV  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &trans  &trans  &trans  &trans  &Miracast
 &bt BT_NXT  &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &kp A
 &trans      &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
 &trans      &trans        &trans        &trans        &trans                              &trans  &trans  &trans  &trans  &to 0
